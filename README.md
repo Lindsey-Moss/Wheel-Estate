@@ -7,8 +7,8 @@
 #### [Website](#) | [GitHub](https://github.com/Lindsey-Moss/) | [LinkedIn](https://www.linkedin.com/in/lindsey-moss-a0571620b/) | 
 ***
 ### ***Description***
-##### A tiny house parking app.
-Tiny houses have seen ever-increasing growth gfor years. Unfortunately, finding a place to legally park your tiny home is *still* the number one challenge and downside for tiny-dwellers everywhere.
+##### The definitive tiny house parking app!
+Tiny living has seen ever-increasing growth for years. Unfortunately, finding a place to legally park your tiny home is *still* the number one challenge and downside for tiny-dwellers everywhere.
 
 This application aims to provide a way to connect tiny-homeowners with property owners with extra space they're willing to rent out. Taking a leaf out of AirBnB's book of hosting internal home space, **Wheel Estate** seeks to enable temporary rental/sharing of *external* home space (property).
 
