@@ -1,12 +1,25 @@
 const { Booking, Spot }  = require('../models')
 
-// get all listings
-const getAllSpots = async (req, res) => {
+// get
+const getAllListings = async (req, res) => {
   try {
     const spots = await Spot.find()
     return res.status(200).json({ spots })
   } catch (error) {
     return res.status(500).send(error.message)
+  }
+}
+
+const getListingById = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const spot = await Spot.findById(id)
+      if (spot) {
+          return res.status(200).json({ spot });
+      }
+      return res.status(404).send('Listing with the specified ID does not exist.');
+  } catch (error) {
+      return res.status(500).send(error.message);
   }
 }
 
@@ -19,7 +32,7 @@ const getAllBookings = async (req, res) => {
   }
 }
 
-// post new listing
+// post new
 // works; review how it is integrated with frontend
 const createNewListing = async (req, res) => {
   try {
@@ -64,17 +77,17 @@ const updateListing = async (req, res) => {
   }
 }
 
-// delete existing listing
+// delete existing 
 const deleteListing = async (req, res) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const deleted = await Spot.findByIdAndDelete(id)
     if (deleted) {
-      return res.status(200).send('Listing deleted')
+      return res.status(200).send("Listing deleted");
     }
-    throw new Error('Listing not found')
+    throw new Error("Listing not found");
   } catch (error) {
-    return res.status(500).send(error.message)
+    return res.status(500).send(error.message);
   }
 }
 
@@ -92,7 +105,8 @@ const deleteBooking = async (req, res) => {
 }
 
 module.exports = {
-  getAllSpots,
+  getAllListings,
+  getListingById,
   getAllBookings,
   createNewListing,
   createNewBooking,
