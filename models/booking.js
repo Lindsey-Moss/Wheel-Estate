@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const bookingSchema = new Schema(
+const BookingSchema = new Schema(
   {
     space_id: { /* type: Object Id...? idk , required: true */ },
     owner_name: { type: String, required: true },
@@ -13,4 +13,4 @@ const bookingSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Booking', bookingSchema)
+module.exports = BookingSchema

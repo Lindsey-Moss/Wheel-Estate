@@ -1,4 +1,4 @@
-const Spot = require('../models/spotSchema')
+const { Booking, Spot }  = require('../models')
 
 // get all listings
 const getAllSpots = async (req, res) => {
@@ -10,8 +10,17 @@ const getAllSpots = async (req, res) => {
   }
 }
 
+const getAllBookings = async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+    return res.status(200).json({ bookings })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 // post new listing
-// needs followup and review
+// works; review how it is integrated with frontend
 const createNewListing = async (req, res) => {
   try {
     const spot = await new Spot(req.body)
@@ -24,7 +33,20 @@ const createNewListing = async (req, res) => {
   }
 }
 
+const createNewBooking = async (req, res) => {
+  try {
+    const booking = await new Booking(req.body)
+    await booking.save()
+    return res.status(201).json({
+      booking,
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message})
+  }
+}
+
 // put update listing
+// works; review how it is integrated with frontend
 const updateListing = async (req, res) => {
   try {
     const { id } = req.params
@@ -43,10 +65,38 @@ const updateListing = async (req, res) => {
 }
 
 // delete existing listing
+const deleteListing = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Spot.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Listing deleted')
+    }
+    throw new Error('Listing not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
+const deleteBooking = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Booking.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Booking deleted')
+    }
+    throw new Error('Booking not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   getAllSpots,
+  getAllBookings,
   createNewListing,
-  updateListing
+  createNewBooking,
+  updateListing,
+  deleteListing,
+  deleteBooking
 }

@@ -10,6 +10,8 @@ router.get('/listings', controllers.getAllSpots)
 
 router.post('/new', controllers.createNewListing)
 
-router.put('/update:id', controllers.updateListing)
+router.put('/update/:id', controllers.updateListing)
+
+router.delete('/delete/:id', controllers.deleteListing)
 
 module.exports = router

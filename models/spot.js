@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const spotSchema = new Schema(
+const SpotSchema = new Schema(
   {
     title: { type: String, required: true},
     owner_name: { type: String, required: true },
@@ -19,4 +19,4 @@ const spotSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Spot', spotSchema)
+module.exports = SpotSchema
