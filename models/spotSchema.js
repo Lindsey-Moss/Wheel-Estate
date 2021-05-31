@@ -10,7 +10,7 @@ const spotSchema = new Schema(
     available_spots: { type: Number, required: true},
     size_length: {type: Number, required: true},
     size_width: {type: Number, required: true},
-    utilities: {type: Enumerator, required: true},
+    utilities: {type: String, enum: ['electric', 'water', 'internet', 'none'], required: true},
     description: { type: String, required: true },
     privacy: {type: String, required: true},
     pets: {type: Boolean, required: true},
