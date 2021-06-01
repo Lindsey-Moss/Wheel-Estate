@@ -9,16 +9,18 @@ export default class Listings extends Component {
     const spotListings = this.props.listings.map(spot => {
       return (
         <SpotCard 
-          key={`${spot.id}${spot.name}`} 
+          key={`${spot._id}`} 
           showSpot={this.showSpot} 
           spot={spot} 
         />
     )});
 
     return (
-      <div className="listings">
+      <div className="page">
         <h1>HERE THERE BE LISTINGS</h1>
-        {spotListings}
+        <div className="listings">
+          {spotListings}
+        </div>
       </div>
     );
   }

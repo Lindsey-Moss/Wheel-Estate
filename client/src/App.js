@@ -20,12 +20,17 @@ export default class App extends Component {
     }
   }
 
+  async componentDidMount() {
+    const res = await axios.get(`${BASE_URL}/listings/all`)
+    this.setState({ listings: res.data.spots})
+  }
+
   addListing = (e) => {
     e.preventDefault()
     const currentListings = this.state.listings;
     const newSpot = { ...this.state.newSpot, id: parseInt(this.state.listings.length + 1), price: parseInt(this.state.newSpot.price) };
     currentListings.push(newSpot);
-    this.setState({ listings: currentListings, newSpot: { /* rest to empty key-value pairs */ } });
+    this.setState({ listings: currentListings, newSpot: { /* reset to empty key-value pairs */ } });
   }
 
   handleChange = (e) => {
@@ -45,9 +50,9 @@ export default class App extends Component {
         <main>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/listings" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
+            <Route exact path="/listings/all" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
             <Route path="/listings/:id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
-            <Route path="/new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
+            <Route exact path="/listings/new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
           </Switch>
         </main>
       </div >
