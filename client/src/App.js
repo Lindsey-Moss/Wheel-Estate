@@ -19,7 +19,7 @@ export default class App extends Component {
     this.state = {
       user: null, // Must be set to owner or parker, which will inform display of other pages/page options down the line.
       listings: [],
-      newSpot: { /* see spotSchema for included info */}
+      newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:''}
     }
   }
 
@@ -31,9 +31,10 @@ export default class App extends Component {
   addListing = (e) => {
     e.preventDefault()
     const currentListings = this.state.listings;
-    const newSpot = { ...this.state.newSpot, id: parseInt(this.state.listings.length + 1), price: parseInt(this.state.newSpot.price) };
+    const newSpot = { ...this.state.newSpot };
     currentListings.push(newSpot);
-    this.setState({ listings: currentListings, newSpot: { /* reset to empty key-value pairs */ } });
+    axios.post(`${BASE_URL}/listing-new`, newSpot)
+    this.setState({ listings: currentListings, newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:'' } });
   }
 
   handleChange = (e) => {
@@ -45,9 +46,6 @@ export default class App extends Component {
   }
 
   render() {
-
-          // only owner can see /new (Listing Form)
-
   return (
     <div>
       {this.state.user ? (
