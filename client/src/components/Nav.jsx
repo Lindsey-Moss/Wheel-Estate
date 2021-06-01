@@ -10,7 +10,7 @@ export default class Nav extends Component {
         <div className="navbar">
           <div>
             <NavLink to="/listings/all">Listings</NavLink>
-            <NavLink to="/listings/new">New Listing</NavLink>
+            <NavLink to="/listing-new">New Listing</NavLink>
           </div>
         </div>
       </nav>
