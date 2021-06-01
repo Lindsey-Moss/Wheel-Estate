@@ -32,6 +32,19 @@ const getAllBookings = async (req, res) => {
   }
 }
 
+const getBookingById = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const booking = await Booking.findById(id)
+      if (booking) {
+          return res.status(200).json({ booking });
+      }
+      return res.status(404).send('Listing with the specified ID does not exist.');
+  } catch (error) {
+      return res.status(500).send(error.message);
+  }
+}
+
 // post new
 // works; review how it is integrated with frontend
 const createNewListing = async (req, res) => {
@@ -104,10 +117,12 @@ const deleteBooking = async (req, res) => {
   }
 }
 
+
 module.exports = {
   getAllListings,
   getListingById,
   getAllBookings,
+  getBookingById,
   createNewListing,
   createNewBooking,
   updateListing,

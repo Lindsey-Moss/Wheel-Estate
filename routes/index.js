@@ -6,15 +6,18 @@ router.get('/', (req, res) => {
   res.send('I am root!')
 })
 
-router.get('/listings', controllers.getAllListings)
-router.get('/bookings', controllers.getAllBookings)
+router.get('/listings/all', controllers.getAllListings)
+router.get('/listings/:id', controllers.getListingById)
+router.get('/bookings/all', controllers.getAllBookings)
+router.get('/bookings/:id', controllers.getBookingById)
 
-router.post('/new-listing', controllers.createNewListing)
-router.post('/new-booking', controllers.createNewBooking)
+router.post('/listings/new', controllers.createNewListing)
+router.post('/bookings/new', controllers.createNewBooking)
 
-router.put('/update-listing/:id', controllers.updateListing)
+router.put('/listings/update/:id', controllers.updateListing)
 
-router.delete('/delete-listing/:id', controllers.deleteListing)
-router.delete('/delete-booking/:id', controllers.deleteBooking)
+router.delete('/listings/delete/:id', controllers.deleteListing)
+router.delete('/bookings/delete/:id', controllers.deleteBooking)
+
 
 module.exports = router

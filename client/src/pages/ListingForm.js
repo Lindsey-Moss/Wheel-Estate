@@ -17,7 +17,7 @@ export default class ListingForm extends Component {
       // see spotSchema in backend for info required
       
       <div>
-        <h1>Add A New Parking Spot Listing</h1>
+        <h1>List Your Parking Spot</h1>
         <form onSubmit={this.handleSubmit}>
           {/* <TextInput type="text" value={newSpot.name} onChange={this.props.handleChange} name={'name'} placeholder={'name'} />
           <TextInput type="text" value={newSpot.img} onChange={this.props.handleChange} name={'img'} placeholder={'image'} />

@@ -17,6 +17,7 @@ export default class Listings extends Component {
 
     return (
       <div className="listings">
+        <h1>HERE THERE BE LISTINGS</h1>
         {spotListings}
       </div>
     );
