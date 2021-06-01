@@ -4,13 +4,18 @@ import logo from '../styles/images/wheel_estate_logo.png'
 
 export default class Nav extends Component {
   render() {
+    const user = this.props.user
     return (
       <nav className="topper">
         <NavLink to="/"><img src={logo} alt="logo" width="70" /></NavLink>
         <div className="navbar">
           <div>
             <NavLink to="/listings/all">Listings</NavLink>
-            <NavLink to="/listing-new">New Listing</NavLink>
+            {user === "owner" ? (
+              <NavLink to="/listing-new">New Listing</NavLink>
+            ) : (
+              null
+            )}
           </div>
         </div>
       </nav>

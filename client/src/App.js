@@ -9,6 +9,9 @@ import Listings from './pages/Listings'
 import SpotDetails from './pages/SpotDetails';
 import ListingForm from './pages/ListingForm';
 
+import homeowner from './styles/images/homeowner.png'
+import thow from './styles/images/thow.png'
+
 
 export default class App extends Component {
   constructor(props) {
@@ -37,25 +40,50 @@ export default class App extends Component {
     this.setState({ newSpot: { ...this.state.newSpot, [e.target.name]: e.target.value } });
   }
 
+  setUser = (e) => {
+    this.setState({ user: e.target.id })
+  }
+
   render() {
 
-          // choose owner or parker first
           // only owner can see /new (Listing Form)
 
   return (
-    <div className="App">
-       <header>
-          <Nav />
-        </header>
-        <main>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/listings/all" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
-            <Route path="/listings/:id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
-            <Route exact path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
-          </Switch>
-        </main>
-      </div >
+    <div>
+      {this.state.user ? (
+      <div className="App">
+        <header>
+            <Nav user ={this.state.user}/>
+          </header>
+          <main>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/listings/all" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
+              <Route path="/listings/:id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
+              <Route exact path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
+            </Switch>
+          </main>
+      </div>) : (
+        <div className="greet">
+          <div className="pretopper">
+            <h1>Welcome to Wheel Estate!</h1>
+            <p>The definitive tiny house parking app. What has long been the biggest drawback of tiny living is now an easy one-stop-shop. <br/><br/> We connect landowners and tiny-dwellers for an easy, mutually-beneficial relationship. That said, are you:</p>
+          </div>
+        <div className="choice">
+          <button className="left" id="owner" onClick={this.setUser}>
+            <img src={homeowner} alt="house on property" id="owner" />
+            <h2 id="owner">a property owner with space to rent?</h2>
+
+          </button>
+          <button className="right" id="parker" onClick={this.setUser}>
+            <img src={thow} alt="tiny house on wheels" id="parker" />
+            <h2 id="parker">a tiny-homeowner seeking parking?</h2>
+
+          </button>
+        </div>
+        </div>
+      )}
+    </div>
   );
 }
 }
