@@ -113,6 +113,10 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
 }
 
+.fit {
+  width: 100%;
+}
+
 
 /* SIGN IN */
 
@@ -129,6 +133,7 @@ h1,h2,h3,h4,h5,h6 {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 .pretopper h1 {
@@ -136,13 +141,6 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Flamenco', serif;
   font-size: 3em;
   padding: 20px;
-}
-
-.pretopper p {
-  margin-top: 0;
-  width: 70%;
-  color: lightgray;
-  margin-bottom: 30px;
 }
 
 .choice {
@@ -198,16 +196,13 @@ h1,h2,h3,h4,h5,h6 {
 .listings {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 
 /* LISTING DETAILS */
 
-.fit {
-  width: 100%;
-}
 
 .back-to-listings {
   align-self: flex-start;
@@ -297,6 +292,61 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
+/* NEW LISTING */
+
+.new-listing-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.new-listing-form label {
+  padding: 15px;
+}
+
+.new-listing-form input {
+  margin: 10px;
+  padding: 6px;
+}
+
+.short {
+  width: 60%;
+}
+
+.long {
+  width: 90%;
+}
+
+.longlabel {
+  width: 30%;
+}
+
+.extralonglabel {
+  width: 100%
+}
+
+.shortlabel {
+  width: 10%;
+}
+
+
+.new-listing-form .fit {
+  text-align: center;
+}
+
+.new-listing-form button {
+  margin: 30px;
+  padding: 10px 20px;
+  align-self: center;
+  border-radius: 3px;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+}
+
 /* .............. COMPONENTS .............. */
 
 
@@ -304,17 +354,16 @@ h1,h2,h3,h4,h5,h6 {
 
 
 .spot-card {
-  max-width: 300px;
-  height: 280px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 15px;
-  margin: 15px;
+  max-width: 200px;
+  height: 200px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255);
+  margin: 10px;
 }
 
 .spot-card img {
   width: 100%;
-  max-width: 500px;
+  max-width: 200px;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -323,7 +372,29 @@ h1,h2,h3,h4,h5,h6 {
   float: right;
 }
 
-h5 {
+h6 {
   font-style: italic;
   font-weight: normal;
+}
+
+
+/* BOOKING CARD */
+
+.booking-card, .booking-card p{
+  max-width: 200px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255);
+  margin: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.booking-card p {
+  font-size: 0.8em;
+}
+
+.booking-card button {
+  margin: 8px 20%;
+  font-size: 0.7em;
 }

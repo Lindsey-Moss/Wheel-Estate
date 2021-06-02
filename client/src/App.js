@@ -2,12 +2,15 @@ import React, {Component} from 'react'
 import { Route, Switch } from 'react-router-dom';
 import './styles/App.css';
 import axios from 'axios'
-import { BASE_URL, IMAGE_PATH } from './globals'
+import { BASE_URL } from './globals'
 import Home from './pages/Home';
 import Nav from './components/Nav'
 import Listings from './pages/Listings'
 import SpotDetails from './pages/SpotDetails';
 import ListingForm from './pages/ListingForm';
+import Bookings from './pages/Bookings'
+import BookingForm from './pages/BookingForm'
+import EditListing from './pages/EditListing'
 
 import homeowner from './styles/images/homeowner.png'
 import thow from './styles/images/thow.png'
@@ -17,15 +20,18 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: null, // Must be set to owner or parker, which will inform display of other pages/page options down the line.
+      user: null, 
       listings: [],
-      newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:''}
+      bookings: [],
+      newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:''},
+      newBooking: { space_id: '', owner_name: '', owner_email: '', parker_name: '', parker_email:'', cost:'' }
     }
   }
 
   async componentDidMount() {
     const res = await axios.get(`${BASE_URL}/listings/all`)
-    this.setState({ listings: res.data.spots})
+    const ress = await axios.get(`${BASE_URL}/bookings/all`)
+    this.setState({ listings: res.data.spots, bookings: ress.data.bookings})
   }
 
   addListing = (e) => {
@@ -37,8 +43,21 @@ export default class App extends Component {
     this.setState({ listings: currentListings, newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:'' } });
   }
 
+  addBooking = (e) => {
+    e.preventDefault()
+    const currentBookings = this.state.bookings;
+    const newBooking = { ...this.state.newBooking, owner_name: 'Test Owner Name', owner_email: 'email@email.mail', cost: 1000000, space_id: "whoop there it is"};
+    currentBookings.push(newBooking);
+    axios.post(`${BASE_URL}/booking-new`, newBooking)
+    this.setState({ bookings: currentBookings, newBooking: { space_id: '', owner_name: '', owner_email: '', parker_name: '', parker_email:'', cost:'' }});
+  }
+
   handleChange = (e) => {
     this.setState({ newSpot: { ...this.state.newSpot, [e.target.name]: e.target.value } });
+  }
+
+  handleBook = (e) => {
+    this.setState({ newBooking: { ...this.state.newBooking, [e.target.name]: e.target.value } });
   }
 
   setUser = (e) => {
@@ -56,16 +75,20 @@ export default class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/listings/all" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
+              <Route path="/listings/all" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
               <Route path="/listings/:_id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
-              <Route exact path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
+              <Route path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
+              <Route path="/bookings/all" component={(props) => <Bookings {...props} bookings={this.state.bookings} user={this.state.user} />} />
+              <Route path="/booking-new" render={(props) => <BookingForm {...props} listings={this.state.listings} bookings={this.state.bookings} newBooking={this.state.newBooking} handleChange={this.handleBook} addBooking={this.addBooking} />} />
+              <Route path="/listings/update/:_id" component={(props) => <EditListing {...props} listings={this.state.listings} user={this.state.user} />} />
+
             </Switch>
           </main>
       </div>) : (
         <div className="greet">
           <div className="pretopper">
             <h1>Welcome to <span style={{color:'#ffde35'}}>Wheel Estate!</span></h1>
-            <p>We connect landowners and tiny-dwellers for an easy, mutually-beneficial relationship. <br/><br/>That said, are you a:</p>
+            <h2>Are you a:</h2>
           </div>
         <div className="choice">
           <button className="left" id="owner" onClick={this.setUser}>

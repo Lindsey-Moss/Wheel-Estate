@@ -9,6 +9,7 @@ export default class FormInput extends Component {
         value={this.props.value}
         onChange={this.props.onChange}
         placeholder={this.props.placeholder}
+        className={this.props.className}
       />
     );
   }

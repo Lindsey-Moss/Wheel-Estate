@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FormInput from '../components/FormInput';
+// import FormInput from '../components/FormInput';
 
 
 export default class EditListing extends Component {
@@ -7,7 +7,6 @@ export default class EditListing extends Component {
   // handleSubmit = (e) => {
   //   e.preventDefault()
   //   this.props.addListing(e)
-  //   this.props.history.push('/listings')
   // }
 
   render() {

@@ -46,7 +46,6 @@ const getBookingById = async (req, res) => {
 }
 
 // post new
-// works; review how it is integrated with frontend
 const createNewListing = async (req, res) => {
   try {
     const spot = await new Spot(req.body)
@@ -68,6 +67,7 @@ const createNewBooking = async (req, res) => {
       booking,
     })
   } catch (error) {
+    console.log(error)
     return res.status(500).json({ error: error.message})
   }
 }

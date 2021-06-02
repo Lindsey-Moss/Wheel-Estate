@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 import { Link } from 'react-router-dom';
-import BookingForm from './BookingForm'
-import EditListing from './EditListing'
+
 
 export default class SpotDetails extends Component {
   constructor(props) {
@@ -21,11 +22,16 @@ export default class SpotDetails extends Component {
   }
 
   deleteThis() {
+    let ID = (window.location.pathname).replace('/listings/','')
+    console.log(ID)
     let doublecheck = prompt(`Are you sure you want to delete this listing? 
 
 To confirm deletion, please type " YES ".`)
     if (doublecheck === "YES") {
-      // axios delete call
+      axios.delete(`${BASE_URL}/listings/delete/${ID}`)
+      alert(`The listing has been successfully deleted. You will now be redirected.`)
+      window.history.back()
+      window.location.reload()
     } else if (!doublecheck) {
     } else {
       alert(`An error occurred during deletion. Sorry about that!
@@ -37,9 +43,6 @@ Please try again in a few moments.`)
   }
 
   render() {
-// will need to be able to edit or delete (for owner state)
-// will need to be able to book (for parker state)
-
     const { spot } = this.state
     return spot ? (
       <div className="page-short">
@@ -80,7 +83,7 @@ Please try again in a few moments.`)
         </div>
           {this.props.user === "owner" ? (
             <div className="owner-buttons">
-              <button className="listing-button">Edit Listing</button>
+              <Link to="/listings/update/:_id"><button className="listing-button">Edit Listing</button></Link>
               <button 
                 className="listing-button" 
                 style={{backgroundColor:'maroon',color:'#ddd',fontFamily:'Century Gothic Bold Italic',letterSpacing:'0.02em'}}
@@ -90,7 +93,7 @@ Please try again in a few moments.`)
               </button>
             </div>
           ) : (
-            <button className="listing-button">Book This Space</button>
+            <Link to="/booking-new"><button className="listing-button">Book This Space</button></Link>
           )}
       </div>
     ) : null;

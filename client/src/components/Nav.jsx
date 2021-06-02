@@ -11,9 +11,11 @@ export default class Nav extends Component {
         <div className="navbar">
           <div>
             <NavLink to="/listings/all">Listings</NavLink>
-            {user === "owner" ? (
-              <NavLink to="/listing-new">New Listing</NavLink>
-            ) : (
+            {user === "owner" ? ( // user: owner view only
+              <span><NavLink to="/listing-new">New Listing</NavLink>
+                <NavLink to="/bookings/all">Bookings</NavLink>
+              </span>
+            ) : ( // user: parker view only
               null
             )}
           </div>
