@@ -1,3 +1,33 @@
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../styles/fonts/GOTHIC.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../styles/fonts/GOTHICI.woff') format('woff');
+}
+  
+
+@font-face {
+  font-family: 'Century Gothic Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../styles/fonts/GOTHICB.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Century Gothic Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../styles/fonts/GOTHICBI.woff') format('woff');
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -20,7 +50,9 @@ h1,h2,h3,h4,h5,h6 {
   margin: 5px 0px;
 }
 
+
 /* .............. NAVIGATION .............. */
+
 
 .topper {
   width: 100%;
@@ -34,7 +66,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .topper img {
-  margin: 10px;
+  margin: 14px 10px 8px 20px;
 }
 
 .navbar {
@@ -52,22 +84,38 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .navbar .active {
-  background-color: rgb(255, 222, 53);
+  background-color: #ffde35;
   color: black;
 }
 
+
 /* .............. PAGES .............. */
+
 
 .page {
   width: 70%;
   height:88vh;
   margin: 0 auto;
   padding: 10px;
-  background-color: rgba(245, 245, 245,0.5);
+  background-color: rgba(245, 245, 245,0.6);
   overflow-y: auto;
 }
 
+.page-short {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(245, 245, 245,0.6);
+  overflow-y: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* SIGN IN */
+
 
 .greet {
   margin: 0 auto;
@@ -86,18 +134,19 @@ h1,h2,h3,h4,h5,h6 {
 .pretopper h1 {
   margin-top: 0;
   font-family: 'Flamenco', serif;
+  font-size: 3em;
   padding: 20px;
 }
 
 .pretopper p {
   margin-top: 0;
-  width: 60%;
+  width: 70%;
   color: lightgray;
   margin-bottom: 30px;
 }
 
 .choice {
-  margin-top: 8%;
+  margin-top: 5%;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -119,6 +168,7 @@ h1,h2,h3,h4,h5,h6 {
   box-shadow: 5px 5px 5px darkslategrey;
   color: whitesmoke;
   font-family: sans-serif;
+  cursor: pointer;
 }
 
 .left:active, .right:active {
@@ -137,34 +187,136 @@ h1,h2,h3,h4,h5,h6 {
 
 .choice h2 {
   margin-bottom: 30px;
-  width: 60%;
+  width: 70%;
+  font-size: 1.5em;
 }
+
 
 /* LISTINGS */
 
+
 .listings {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* LISTING DETAILS */
+
+.fit {
+  width: 100%;
+}
+
+.back-to-listings {
+  align-self: flex-start;
+  width: 140px;
+  cursor: pointer;
+}
+
+.page-short h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.details-left{
+  width:40%;
+  height: 50vh;
+}
+
+.spot-zoom {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
 }
 
+.spot-zoom img {
+  width: 90%;
+  max-width: 500px;
+  border: 3px solid white;
+  padding: 2px;
+}
+
+.spot-about {
+  margin: 0 auto;
+  width: 89%;
+  max-width: 494px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+}
+
+.details-right {
+  width: 60%;
+  height: 50vh;
+}
+
+.description {
+  margin-top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  height: 350px;
+  font-size: 0.9em;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.spot-enhance {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-gap: 5px;
+  margin-bottom: 50px;
+}
+
+.spot-enhance div {
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.owner-buttons {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin:10px;
+}
+
+.listing-button {
+  align-self: center;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+}
+
 
 /* .............. COMPONENTS .............. */
 
+
 /* SPOT CARD */
 
+
 .spot-card {
-  max-width: 500px;
+  max-width: 300px;
+  height: 280px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 15px;
-  margin-bottom: 30px;
+  margin: 15px;
 }
 
 .spot-card img {
   width: 100%;
   max-width: 500px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .price {

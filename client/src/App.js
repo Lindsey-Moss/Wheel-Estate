@@ -57,25 +57,25 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/listings/all" component={(props) => <Listings {...props} listings={this.state.listings} user={this.state.user} />} />
-              <Route path="/listings/:id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
+              <Route path="/listings/:_id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
               <Route exact path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
             </Switch>
           </main>
       </div>) : (
         <div className="greet">
           <div className="pretopper">
-            <h1>Welcome to Wheel Estate!</h1>
-            <p>The definitive tiny house parking app. What has long been the biggest drawback of tiny living is now an easy one-stop-shop. <br/><br/> We connect landowners and tiny-dwellers for an easy, mutually-beneficial relationship. That said, are you:</p>
+            <h1>Welcome to <span style={{color:'#ffde35'}}>Wheel Estate!</span></h1>
+            <p>We connect landowners and tiny-dwellers for an easy, mutually-beneficial relationship. <br/><br/>That said, are you a:</p>
           </div>
         <div className="choice">
           <button className="left" id="owner" onClick={this.setUser}>
             <img src={homeowner} alt="house on property" id="owner" />
-            <h2 id="owner">a property owner with space to rent?</h2>
+            <h2 id="owner">Property owner with available space to rent out?</h2>
 
           </button>
           <button className="right" id="parker" onClick={this.setUser}>
             <img src={thow} alt="tiny house on wheels" id="parker" />
-            <h2 id="parker">a tiny-homeowner seeking parking?</h2>
+            <h2 id="parker">Tiny-homeowner seeking a parking arrangement?</h2>
 
           </button>
         </div>

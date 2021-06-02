@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormInput from '../components/FormInput';
 
 
-export default class EditListing extends Component {
+export default class BookingForm extends Component {
 
   // handleSubmit = (e) => {
   //   e.preventDefault()
@@ -17,7 +17,7 @@ export default class EditListing extends Component {
       // see bookingSchema in backend for info required
       
       <div>
-        <h1>Updating Listing ID # {spot._id}...</h1>
+        <h1>Information Required For Booking:</h1>
         {/* <form onSubmit={this.handleSubmit}>
           <FormInput type="text" value={newSpot.name} onChange={this.props.handleChange} name={'name'} placeholder={'name'} />
           <FormInput type="text" value={newSpot.img} onChange={this.props.handleChange} name={'img'} placeholder={'image'} />

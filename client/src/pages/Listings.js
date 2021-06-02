@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Link, animateScroll as scroll } from "react-scroll"
 import SpotCard from '../components/SpotCard';
 
 export default class Listings extends Component {
   showSpot = (spot) => {
-    this.props.history.push(`/listings/${spot.id}`)
+    this.props.history.push(`/listings/${spot._id}`)
   }
   render() {
     const spotListings = this.props.listings.map(spot => {
@@ -18,7 +17,6 @@ export default class Listings extends Component {
 
     return (
       <div className="page">
-        <h1>HERE THERE BE LISTINGS</h1>
         <div className="listings">
           {spotListings}
         </div>
