@@ -109,21 +109,22 @@ export default class ListingForm extends Component {
               placeholder={'Are there neighbors around the space?'} />
             </label>
           <label for="pets" className="shortlabel"><h5>Are Pets Allowed?:</h5>
-            <FormInput 
-              type="text" 
+            <select
               value={newSpot.pets} 
               onChange={this.props.handleChange} 
-              name={'pets'} 
-              placeholder={'Yes or No'} 
-              className="short"/>
+              name={'pets'}
+              className="short">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
             </label>
             <label for="description" className="extralonglabel"><h5>Description:</h5>
-            <FormInput 
-              type="textarea" 
+            <textarea
               value={newSpot.description} 
               onChange={this.props.handleChange} 
               name={'description'} 
               placeholder={'Description'} 
+              rows={5}
               className="long"/>
             </label>  
           <div className="fit"><button>Submit</button></div>

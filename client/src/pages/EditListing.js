@@ -139,21 +139,22 @@ Please try again in a few moments.`)
               placeholder={'Are there neighbors around the space?'} />
             </label>
           <label for="pets" className="shortlabel"><h5>Are Pets Allowed?:</h5>
-            <FormInput 
-              type="text" 
+            <select 
               value={spot.pets} 
               onChange={this.handleChange} 
               name={'pets'} 
-              placeholder={'Yes or No'} 
-              className="short"/>
+              className="short">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
             </label>
             <label for="description" className="extralonglabel"><h5>Description:</h5>
-            <FormInput 
-              type="text-area" 
+            <textarea
               value={spot.description} 
               onChange={this.handleChange} 
               name={'description'} 
               placeholder={'Description'} 
+              rows={5}
               className="long"/>
             </label>  
           <div className="fit"><button>Submit Changes</button></div>
