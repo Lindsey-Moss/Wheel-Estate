@@ -14,7 +14,7 @@ router.get('/bookings/:id', controllers.getBookingById)
 router.post('/listing-new', controllers.createNewListing)
 router.post('/booking-new', controllers.createNewBooking)
 
-router.put('/listings/update/:id', controllers.updateListing)
+router.put('/listing-update/:id', controllers.updateListing)
 
 router.delete('/listings/delete/:id', controllers.deleteListing)
 router.delete('/bookings/delete/:id', controllers.deleteBooking)

@@ -12,10 +12,6 @@ export default class SpotDetails extends Component {
     }
   }
 
-  goBack() {
-    window.history.back();
-  }
-
   deleteThis() {
     let ID = (window.location.pathname).replace('/listings/','')
     let doublecheck = prompt(`Are you sure you want to delete this listing? 
@@ -25,7 +21,9 @@ To confirm deletion, please type " YES ".`)
       axios.delete(`${BASE_URL}/listings/delete/${ID}`)
       alert(`The listing has been successfully deleted. You will now be redirected.`)
       window.history.back()
-      window.location.reload()
+      // window.location.reload()
+      //// Reload will be implemented once the app has graduated
+      //// from needing the landing, false sign-in page.
     } else if (!doublecheck) {
     } else {
       alert(`An error occurred during deletion. Sorry about that!
@@ -41,13 +39,12 @@ Please try again in a few moments.`)
     return spot ? (
       <div className="page-short">
         <div className="fit">
-          <button 
+          <Link to="/listings/all"><button 
             className="back-to-listings"
-            onClick={this.goBack}
             style={{padding:'6px', fontSize: '0.7em'}}
             >
               Return to Listings
-          </button>
+          </button></Link>
         </div>
         <div class="fit">
           <h2>{spot.title}</h2>
@@ -77,17 +74,25 @@ Please try again in a few moments.`)
         </div>
           {this.props.user === "owner" ? (
             <div className="owner-buttons">
-              <Link to="/listings/update/:_id"><button className="listing-button">Edit Listing</button></Link>
+              <Link to={`/listing-update/${this.state.spot._id}`}>
+                <button className="listing-button">
+                  Edit Listing
+                </button>
+              </Link>
               <button 
-                className="listing-button" 
-                style={{backgroundColor:'maroon',color:'#ddd',fontFamily:'Century Gothic Bold Italic',letterSpacing:'0.02em'}}
-                onClick={this.deleteThis}
-              >
-                Delete Listing
+                className="listing-del-button" 
+                onClick={this.deleteThis}>
+                  Delete Listing
               </button>
             </div>
           ) : (
-            <Link to={`/booking-new/${this.state.spot._id}`}><button className="listing-button">Book This Space</button></Link>
+            <Link to={`/booking-new/${this.state.spot._id}`}>
+              <button 
+                className="listing-book-button"
+                style={{marginTop:'10px'}}>
+                Book This Space
+              </button>
+            </Link>
           )}
       </div>
     ) : null;

@@ -119,7 +119,7 @@ export default class ListingForm extends Component {
             </label>
             <label for="description" className="extralonglabel"><h5>Description:</h5>
             <FormInput 
-              type="text-area" 
+              type="textarea" 
               value={newSpot.description} 
               onChange={this.props.handleChange} 
               name={'description'} 

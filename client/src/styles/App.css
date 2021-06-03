@@ -281,13 +281,34 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .listing-button {
-  align-self: center;
   padding: 10px 26px;
   border-radius: 30px;
   font-family: 'Century Gothic', sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: #333;
+  cursor: pointer;
+}
+
+.listing-del-button {
+  background-color: maroon;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-family: 'Century Gothic Bold Italic', sans-serif;
+  font-size: 1em;
+  letter-spacing:0.02em;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.listing-book-button {
+  background-color: #ffde35;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: black;
   cursor: pointer;
 }
 
@@ -409,7 +430,7 @@ h6 {
 /* BOOKING CARD */
 
 .booking-card, .booking-card p{
-  max-width: 200px;
+  width: 200px;
   padding: 5px;
   background-color: rgba(255, 255, 255);
   margin: 10px;
@@ -422,7 +443,21 @@ h6 {
   font-size: 0.8em;
 }
 
-.booking-card button {
-  margin: 8px 20%;
+.booking-buttons {
+  width: 100%;
+  text-align: center;
+}
+
+.enhance {
+  margin: 8px 10px 8px 0px;
   font-size: 0.7em;
+}
+
+.cancel {
+  margin: 8px 0px 8px 10px;
+  font-size: 0.7em;
+  background-color: maroon;
+  color: lightgray;
+  font-weight: bold;
+  border-radius: 3px;
 }

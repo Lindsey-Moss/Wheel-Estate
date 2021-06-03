@@ -99,6 +99,7 @@ const deleteListing = async (req, res) => {
     }
     throw new Error("Listing not found");
   } catch (error) {
+    console.log(error)
     return res.status(500).send(error.message);
   }
 }
@@ -112,6 +113,7 @@ const deleteBooking = async (req, res) => {
     }
     throw new Error('Booking not found')
   } catch (error) {
+    console.log(error)
     return res.status(500).send(error.message)
   }
 }

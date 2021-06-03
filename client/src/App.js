@@ -80,9 +80,8 @@ export default class App extends Component {
               <Route path="/listings/:_id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
               <Route path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
               <Route path="/bookings/all" component={(props) => <Bookings {...props} bookings={this.state.bookings} user={this.state.user} />} />
-              <Route path="/booking-new/:_id" render={(props) => <BookingForm {...props} listings={this.state.listings} bookings={this.state.bookings} newBooking={this.state.newBooking} handleChange={this.handleBook} addBooking={this.addBooking} />} />
-              <Route path="/listings/update/:_id" component={(props) => <EditListing {...props} listings={this.state.listings} user={this.state.user} />} />
-
+              <Route path="/booking-new/:_id" render={(props) => <BookingForm {...props} bookings={this.state.bookings} newBooking={this.state.newBooking} handleChange={this.handleBook} addBooking={this.addBooking} />} />
+              <Route path="/listing-update/:_id" component={(props) => <EditListing {...props} listings={this.state.listings} user={this.state.user} />} />
             </Switch>
           </main>
       </div>) : (
