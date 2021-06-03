@@ -3,10 +3,16 @@ import FormInput from '../components/FormInput';
 
 
 export default class BookingForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      listingId: props.match.params._id
+    }
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.addBooking(e)
+    this.props.addBooking(e, this.state.listingId)
   }
 
   render() {
@@ -15,8 +21,8 @@ export default class BookingForm extends Component {
     
       <div className="page">
         <h1>Information Required For Booking:</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label for="parker_name" ><h5>Listing Title:</h5>
+        <form onSubmit={this.handleSubmit} className="new-booking-form">
+          <label for="parker_name" ><h5>Your Name:</h5>
               <FormInput 
                 type="text" 
                 value={newBooking.parker_name} 

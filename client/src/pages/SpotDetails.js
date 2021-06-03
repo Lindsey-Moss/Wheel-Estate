@@ -8,13 +8,8 @@ export default class SpotDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      spot: null
+      spot: props.listings.find((spot) => spot._id === props.match.params._id)
     }
-  }
-
-  componentDidMount() {
-    let selectedSpot = this.props.listings.find((spot) => spot._id === this.props.match.params._id)
-    this.setState({ spot: selectedSpot })
   }
 
   goBack() {
@@ -23,7 +18,6 @@ export default class SpotDetails extends Component {
 
   deleteThis() {
     let ID = (window.location.pathname).replace('/listings/','')
-    console.log(ID)
     let doublecheck = prompt(`Are you sure you want to delete this listing? 
 
 To confirm deletion, please type " YES ".`)
@@ -93,7 +87,7 @@ Please try again in a few moments.`)
               </button>
             </div>
           ) : (
-            <Link to="/booking-new"><button className="listing-button">Book This Space</button></Link>
+            <Link to={`/booking-new/${this.state.spot._id}`}><button className="listing-button">Book This Space</button></Link>
           )}
       </div>
     ) : null;

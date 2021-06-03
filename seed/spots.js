@@ -6,6 +6,7 @@ const main = async () => {
   {
     "title": "TEST LISTING 1",
     "owner_name": "Test Person 1",
+    "owner_email": "fake@email.com",
     "price": 950.00,
     "available_spots": 1,
     "size_length": 10,
@@ -20,6 +21,7 @@ const main = async () => {
   {
     "title": "TEST LISTING 2",
     "owner_name": "Test Person 2",
+    "owner_email": "fake@email.com",
     "price": 950.00,
     "available_spots": 1,
     "size_length": 10,
@@ -34,6 +36,7 @@ const main = async () => {
   {
     "title": "TEST LISTING 3",
     "owner_name": "Test Person 3",
+    "owner_email": "fake@email.com",
     "price": 950.00,
     "available_spots": 1,
     "size_length": 10,

@@ -43,10 +43,11 @@ export default class App extends Component {
     this.setState({ listings: currentListings, newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:'' } });
   }
 
-  addBooking = (e) => {
+  addBooking = (e, listingId) => {
     e.preventDefault()
     const currentBookings = this.state.bookings;
-    const newBooking = { ...this.state.newBooking, owner_name: 'Test Owner Name', owner_email: 'email@email.mail', cost: 1000000, space_id: "whoop there it is"};
+    const thisListing = this.state.listings.find((spot) => spot._id === listingId)
+    const newBooking = { ...this.state.newBooking, owner_name: thisListing.owner_name, owner_email: thisListing.owner_email, cost: thisListing.price, space_id: thisListing._id};
     currentBookings.push(newBooking);
     axios.post(`${BASE_URL}/booking-new`, newBooking)
     this.setState({ bookings: currentBookings, newBooking: { space_id: '', owner_name: '', owner_email: '', parker_name: '', parker_email:'', cost:'' }});
@@ -79,7 +80,7 @@ export default class App extends Component {
               <Route path="/listings/:_id" component={(props) => <SpotDetails {...props} listings={this.state.listings} user={this.state.user} />} />
               <Route path="/listing-new" render={(props) => <ListingForm {...props} newSpot={this.state.newSpot} handleChange={this.handleChange} addListing={this.addListing} />} />
               <Route path="/bookings/all" component={(props) => <Bookings {...props} bookings={this.state.bookings} user={this.state.user} />} />
-              <Route path="/booking-new" render={(props) => <BookingForm {...props} listings={this.state.listings} bookings={this.state.bookings} newBooking={this.state.newBooking} handleChange={this.handleBook} addBooking={this.addBooking} />} />
+              <Route path="/booking-new/:_id" render={(props) => <BookingForm {...props} listings={this.state.listings} bookings={this.state.bookings} newBooking={this.state.newBooking} handleChange={this.handleBook} addBooking={this.addBooking} />} />
               <Route path="/listings/update/:_id" component={(props) => <EditListing {...props} listings={this.state.listings} user={this.state.user} />} />
 
             </Switch>

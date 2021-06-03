@@ -54,7 +54,6 @@ const createNewListing = async (req, res) => {
       spot,
     })
   } catch (error) {
-    console.log(error)
     return res.status(500).json({ error: error.message })
   }
 }
@@ -67,7 +66,6 @@ const createNewBooking = async (req, res) => {
       booking,
     })
   } catch (error) {
-    console.log(error)
     return res.status(500).json({ error: error.message})
   }
 }

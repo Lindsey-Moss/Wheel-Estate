@@ -4,7 +4,6 @@ import BookingCard from '../components/BookingCard';
 export default class Bookings extends Component {
   showSpot = (spot) => {
     this.props.history.push(`/listings/${spot.space_id}`)
-    console.log(spot.space_id)
   }
   render() {
     const currentBookings = this.props.bookings.map(spot => {

@@ -302,11 +302,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .new-listing-form label {
-  padding: 15px;
+  padding: 10px;
+  margin: 0;
 }
 
-.new-listing-form input {
-  margin: 10px;
+.new-listing-form h5 {
+  margin: 0;
+}
+
+.new-listing-form input, .new-booking-form input {
+  margin: 8px;
   padding: 6px;
 }
 
@@ -331,7 +336,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-.new-listing-form .fit {
+.new-listing-form .fit, .new-booking-form .fit {
   text-align: center;
 }
 
@@ -346,6 +351,29 @@ h1,h2,h3,h4,h5,h6 {
   color: #333;
   cursor: pointer;
 }
+
+
+/* NEW BOOKING */
+
+.new-booking-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.new-booking-form button {
+  margin: 30px;
+  padding: 10px 20px;
+  align-self: center;
+  border-radius: 3px;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+}
+
 
 /* .............. COMPONENTS .............. */
 

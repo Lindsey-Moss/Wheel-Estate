@@ -41,7 +41,7 @@ export default class ListingForm extends Component {
               placeholder={'#'} 
               className="short"/>
             </label>
-          <label for="available_spots" className="shortlabel"><h5>Spaces Available for Rent:</h5>
+          <label for="available_spots" className="shortlabel"><h5>Spaces Available:</h5>
             <FormInput 
               type="text" 
               value={newSpot.available_spots} 
@@ -66,9 +66,16 @@ export default class ListingForm extends Component {
               onChange={this.props.handleChange} 
               name={'owner_name'} 
               placeholder={`Owner's Name`} />
-            </label>
-              
-          <label for="size_length" className="shortlabel"><h5>Spot Length<br/>(in feet):</h5>
+          </label>
+          <label for="owner_email"><h5>Your Email:</h5>
+            <FormInput 
+              type="text" 
+              value={newSpot.owner_email} 
+              onChange={this.props.handleChange} 
+              name={'owner_email'} 
+              placeholder={`email@email.com`} />
+          </label>
+          <label for="size_length" className="shortlabel"><h5>Spot Length:<br/><sup>(in feet)</sup></h5>
             <FormInput type="text" 
               value={newSpot.size_length} 
               onChange={this.props.handleChange} 
@@ -76,7 +83,7 @@ export default class ListingForm extends Component {
               placeholder={'#'} 
               className="short"/>
             </label>
-          <label for="size_width" className="shortlabel"><h5>Spot Width<br/>(in feet):</h5>
+          <label for="size_width" className="shortlabel"><h5>Spot Width:<br/><sup>(in feet)</sup></h5>
             <FormInput 
               type="text" 
               value={newSpot.size_width} 
@@ -84,7 +91,7 @@ export default class ListingForm extends Component {
               name={'size_width'} 
               placeholder={'#'} 
               className="short"/>
-            </label>
+          </label>
           <label for="utilities"><h5>Utilities Available:</h5>
             <FormInput 
               type="text" 

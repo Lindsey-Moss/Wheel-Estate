@@ -4,7 +4,7 @@
 ### By: Lindsey "Zee" Moss
 
 
-#### [Website](#) | [GitHub](https://github.com/Lindsey-Moss/) | [LinkedIn](https://www.linkedin.com/in/lindsey-moss-a0571620b/) | 
+#### [Website](#) | [GitHub](https://github.com/Lindsey-Moss/) | [LinkedIn](https://www.linkedin.com/in/lindsey-zee-moss/) | 
 ***
 ### ***Description***
 ##### The definitive tiny house parking app!
