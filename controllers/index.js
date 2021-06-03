@@ -71,7 +71,6 @@ const createNewBooking = async (req, res) => {
 }
 
 // put update listing
-// works; review how it is integrated with frontend
 const updateListing = async (req, res) => {
   try {
     const { id } = req.params
