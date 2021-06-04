@@ -569,16 +569,19 @@ textarea {
   }
   .page-short{
     width: 93%;
-    height: 85vh;
+    height: 88vh;
+  }
+  .page-short h2{
+    margin-bottom: 10px;
   }
   .details-left{
     width: 37%;
     margin-right: 1.5%;
-    height: 70vh;
+    height: 80vh;
   }
   .details-right{
     width: 55%;
-    height: 70vh;
+    height: 80vh;
   }
   .description {
     width: 97%;
@@ -589,6 +592,7 @@ textarea {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5,1fr);
     grid-gap: 3px;
+    margin-bottom: 20px;
   }
   .spot-enhance div {
     font-size: 0.8em;
@@ -604,8 +608,9 @@ textarea {
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-start;
+    width: 80%;
   }
-  .new-listing-form {
-
+  .short, .long {
+    width: 100%;
   }
 }
