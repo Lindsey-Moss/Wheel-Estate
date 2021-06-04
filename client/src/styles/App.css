@@ -569,7 +569,7 @@ textarea {
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-end;
-    width: 90%;
+    width: 95%;
   }
   .page-short{
     width: 93%;
@@ -636,7 +636,7 @@ textarea {
   .spot-card {
     width: 80%;
     max-width: 90%;
-    height: 30vh;
+    height: 32vh;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -652,6 +652,7 @@ textarea {
  .spot-card h6 {
    width: 100%;
    align-self:stretch;
+   
  }
 
 }
