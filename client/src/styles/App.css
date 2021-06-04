@@ -566,8 +566,10 @@ textarea {
     margin: 15px;
   }
   .listings {
+    flex-flow: column wrap;
     justify-content: center;
-    width: 100%;
+    align-items: flex-end;
+    width: 90%;
   }
   .page-short{
     width: 93%;
@@ -642,7 +644,7 @@ textarea {
   }
   .spot-card img {
     height: auto;
-    max-height: 60%;
+    max-height: 70%;
   }
   .spot-card h4 {
     width: 95%;
