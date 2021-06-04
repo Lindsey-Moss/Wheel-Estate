@@ -647,9 +647,10 @@ textarea {
     max-height: 70%;
   }
   .spot-card h4 {
-    width: 95%;
+    width: 100%;
   }
  .spot-card h6 {
+   width: 100%;
    align-self:stretch;
  }
 
