@@ -19,6 +19,7 @@ export default class Home extends Component {
             and within the lifestyle. Listed below are additional projects
             and sources for further assistance and knowledge.
             </p>
+            <hr/>
             <div className="additionals">
               <a href="https://tiny-project.com/resources/"><img src="https://149429980.v2.pressablecdn.com/wp-content/uploads/2020/03/logo.png" alt="The Tiny Project" /></a>
               <a href="https://www.thetinyhouse.net/resources/"><img src="https://mk0thetinyhousednaa2.kinstacdn.com/wp-content/uploads/2014/12/the_tiny_house-new-logo-small.png" alt="The Tiny House" /></a>

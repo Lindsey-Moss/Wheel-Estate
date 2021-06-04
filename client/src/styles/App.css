@@ -174,11 +174,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .left {
-  border-right: 1vw solid whitesmoke;
+  border-right: 1.5vw solid whitesmoke;
 }
 
 .right {
-  border-left: 1vw solid whitesmoke;
+  border-left: 1.5vw solid whitesmoke;
 
 }
 
@@ -219,6 +219,11 @@ h1,h2,h3,h4,h5,h6 {
   margin: 20px 15px;
   max-width: 190px;
   max-height: 100px;
+}
+
+.home hr {
+  width: 500px;
+  margin: 10px 0px;
 }
 
 
