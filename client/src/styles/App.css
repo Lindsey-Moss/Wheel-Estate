@@ -568,18 +568,25 @@ textarea {
     justify-content: center;
   }
   .page-short{
-    width: 90%;
+    width: 91%;
+  }
+  .details-left{
+    height: 55vh;
+  }
+  .details-right{
+    height: 55vh;
   }
   .description {
-    width: 93%;
-    height: 50%;
+    width: 94%;
+    height: 45%;
   }
   .spot-enhance {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,1fr);
     grid-gap: 3px;
-    margin-bottom: 30px;
   }
   .spot-enhance div {
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
   .spot-enhance h6 {
     font-size: 1em;
