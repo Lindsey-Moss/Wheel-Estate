@@ -568,7 +568,8 @@ textarea {
     justify-content: center;
   }
   .page-short{
-    width: 91%;
+    width: 92%;
+    height: 80vh;
   }
   .details-left{
     height: 55vh;
@@ -595,5 +596,12 @@ textarea {
     padding: 6px 13px;
     font-size:0.8em;
   }
+  .new-listing-form {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .new-listing-form {
 
+  }
 }
