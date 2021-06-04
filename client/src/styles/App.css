@@ -636,11 +636,7 @@ textarea {
   .spot-card {
     width: 80%;
     max-width: 90%;
-    height: 32vh;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+    height: 33%;
   }
   .spot-card img {
     height: auto;
