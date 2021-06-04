@@ -605,10 +605,15 @@ textarea {
     margin: 10px;
     font-size:0.8em;
   }
+  .listing-book-button {
+    position: absolute;
+    top: 70%;
+    left: 0;
+  }
   .owner-buttons {
     position: absolute;
-    top: 630px;
-    left: -20px;
+    top: 70%;
+    left: 0;
     width: 40%;
     flex-flow: column wrap;
     justify-content: space-between;
