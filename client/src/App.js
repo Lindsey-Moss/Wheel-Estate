@@ -42,6 +42,9 @@ export default class App extends Component {
     axios.post(`${BASE_URL}/listing-new`, newSpot)
     this.setState({ listings: currentListings, newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:'' } });
     window.history.back()
+      // window.location.reload()
+      //// Reload will be implemented once the app has graduated
+      //// from needing the landing, false sign-in page.
   }
 
   addBooking = (e, listingId) => {
