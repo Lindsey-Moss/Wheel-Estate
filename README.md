@@ -52,6 +52,7 @@ TBD
 - [ ] Robust filtering of listings (by location, price, spot dimensions, utilities available, pets allowed, etc.)
 - [ ] Booking/calendar integration.
 - [ ] Checkout/payment integration.
+- [ ] Multiple photos on listing detail page.
 
 ***
 
