@@ -41,6 +41,7 @@ export default class App extends Component {
     currentListings.push(newSpot);
     axios.post(`${BASE_URL}/listing-new`, newSpot)
     this.setState({ listings: currentListings, newSpot: { title: '', owner_name: '', price: '', description: '', image:'', available_spots:'', size_length:'', size_width:'', utilities:'', privacy:'', pets:'', location:'' } });
+    window.history.back()
   }
 
   addBooking = (e, listingId) => {
