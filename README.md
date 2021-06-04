@@ -33,15 +33,11 @@ This application aims to provide a way to connect tiny-homeowners with property 
 
 ### ***Screenshots***
 
-TBD
-<!-- ##### fdsafdsa
-![xxx](#)
+##### Temporary Landing Page, In Lieu of Login/User Profiles
+![Wheel Estate, View as Owner or Parker](https://trello-attachments.s3.amazonaws.com/60ba9beef042d9282f5633e9/1036x929/4e8320fe324fa28ddf6c1550a010e4f2/ss_temp-landing.jpg)
 
-##### fdsafdsa
-![xxx](#)
-
-##### afdsfdsa
-![xxx](#)  -->
+##### Home Page, Owner View
+![Wheel Estate, Welcome message and affiliate links](https://trello-attachments.s3.amazonaws.com/60ba9c3e173cc836f0a0a3b4/1049x932/163f4a423978a3a157daf2851b6f2da6/image.png)
 ***
 
 ### ***Future Updates***
@@ -58,6 +54,6 @@ TBD
 
 ### ***Credits***
 
-TBD
+**Fonts:** [Google Fonts: Mukta and Flamenco](https://fonts.google.com/), [Century Gothic](https://www.cufonfonts.com/font/century-gothic)
 
-<!-- **Fonts:** [xxx](#) -->
+**Listing Data:** [Search Tiny House Villages](https://searchtinyhousevillages.com/)
