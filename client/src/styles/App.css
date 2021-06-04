@@ -200,6 +200,7 @@ h1,h2,h3,h4,h5,h6 {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .home p {
@@ -468,9 +469,6 @@ textarea {
   padding: 10px;
   background-color: rgba(255, 255, 255);
   margin: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow:ellipsis;
 }
 
 .spot-card img {
@@ -490,6 +488,10 @@ textarea {
 }
 
 .spot-card h4 {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
   line-height: 100%;
   font-family: 'Century Gothic Bold';
 }
