@@ -6,8 +6,8 @@ export default class SpotCard extends Component {
     return (
       <div className="spot-card" onClick={() => this.props.showSpot(spot)}>
         <img style={{ display: 'block' }} src={spot.image} alt={spot.title} />
-        <div className="banner"><h4>{spot.title} <span className="price">${spot.price}</span></h4></div>
-        <h6>{spot.location}</h6>
+        <h4>{spot.title}</h4>
+        <h6>{spot.location} <span className="price">${spot.price}</span></h6>
       </div>
     );
   }

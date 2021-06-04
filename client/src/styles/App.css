@@ -97,7 +97,7 @@ h1,h2,h3,h4,h5,h6 {
   height:88vh;
   margin: 0 auto;
   padding: 10px;
-  background-color: rgba(245, 245, 245,0.6);
+  background-color: rgba(245, 245, 245);
   overflow-y: auto;
 }
 
@@ -105,7 +105,7 @@ h1,h2,h3,h4,h5,h6 {
   width: 70%;
   margin: 0 auto;
   padding: 10px;
-  background-color: rgba(245, 245, 245,0.6);
+  background-color: rgba(245, 245, 245);
   overflow-y: auto;
   display: flex;
   flex-flow: row wrap;
@@ -193,6 +193,35 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
+/* HOME */
+
+.home {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.home p {
+  line-height: 120%;
+  width: 90%;
+  text-align: justify;
+}
+
+.additionals {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.additionals img {
+  margin: 20px 15px;
+  max-width: 190px;
+  max-height: 100px;
+}
+
+
 /* LISTINGS */
 
 
@@ -218,6 +247,12 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 20px;
 }
 
+.details-price {
+  float: right;
+  font-style: normal;
+  font-weight: bold;
+}
+
 .details-left{
   width:40%;
   height: 50vh;
@@ -230,19 +265,16 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
 }
 
-.spot-zoom img {
-  width: 90%;
-  max-width: 500px;
-  border: 3px solid white;
-  padding: 2px;
-}
-
 .spot-about {
   margin: 0 auto;
-  width: 89%;
-  max-width: 494px;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 8px;
+  width: 90%;
+  padding: 8px 8px 0px 8px;
+  background-color: white;
+}
+
+.spot-about img {
+  width: 100%;
+  max-width: 500px;
 }
 
 .details-right {
@@ -252,7 +284,9 @@ h1,h2,h3,h4,h5,h6 {
 
 .description {
   margin-top: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255);
+  text-align: justify;
+  line-height: 130%;
   padding: 10px;
   height: 350px;
   font-size: 0.9em;
@@ -262,7 +296,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .spot-enhance {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5,1fr);
   grid-gap: 5px;
@@ -271,8 +305,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .spot-enhance div {
   padding: 6px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255);
   text-align: center;
+  font-size: 0.9em;
+}
+
+.spot-enhance h6 {
+  font-size: 0.9em;
+  line-height: 110%;
 }
 
 .owner-buttons {
@@ -332,6 +372,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .new-listing-form h5 {
   margin: 0;
+  line-height: 110%;
 }
 
 .new-listing-form input, .new-booking-form input {
@@ -358,7 +399,6 @@ h1,h2,h3,h4,h5,h6 {
 .shortlabel {
   width: 10%;
 }
-
 
 .new-listing-form .fit, .new-booking-form .fit {
   text-align: center;
@@ -429,9 +469,18 @@ textarea {
 
 .price {
   float: right;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 110%;
 }
 
-h6 {
+.spot-card h4 {
+  line-height: 100%;
+  font-family: 'Century Gothic Bold';
+}
+
+.spot-card h6 {
   font-style: italic;
   font-weight: normal;
 }

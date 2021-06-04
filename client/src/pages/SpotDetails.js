@@ -52,9 +52,9 @@ Please try again in a few moments.`)
         <div className="details-left">
           <div className="spot-zoom">
             <div className="spot-about">
-            <h4>Located in: {spot.location} <span className="price">Price: ${spot.price}</span></h4>
-          </div>
+            <h4>Located in: {spot.location} <span className="details-price">${spot.price}</span></h4>
             <img src={spot.image} alt={spot.title} />
+          </div>
           </div>
         </div>
         <div className="details-right">
