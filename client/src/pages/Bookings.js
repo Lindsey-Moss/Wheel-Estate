@@ -17,7 +17,7 @@ export default class Bookings extends Component {
 
     return (
       <div className="page">
-        <div className="listings">
+        <div className="bookings">
           {currentBookings}
         </div>
       </div>
