@@ -549,47 +549,44 @@ textarea {
   .topper img {
     width: 30px;
   }
-  
   .topper {
     font-size: 1em;
   }
-  
   .navbar a{
     padding: 8px 10px;
   }
- .page {
+  .page {
    height: 91vh;
- }
- .choice h2 {
+  }
+  .choice h2 {
   font-size: 1em;
-}
-
-.additionals img {
-  margin: 15px;
-}
-.listings {
-  justify-content: center;
-}
-.page-short{
-  width: 96%;
-}
-.description {
-  width: 93%;
-  height: 50%;
-}
-.spot-enhance {
-  grid-gap: 3px;
-  margin-bottom: 30px;
-}
-.spot-enhance div {
-  font-size: 0.7em;
-}
-.spot-enhance h6 {
-  font-size: 1em;
-}
-.listing-button, .listing-del-button, .listing-book-button {
-  padding: 6px 13px;
-  font-size:0.8em;
-}
+  }
+  .additionals img {
+    margin: 15px;
+  }
+  .listings {
+    justify-content: center;
+  }
+  .page-short{
+    width: 90%;
+  }
+  .description {
+    width: 93%;
+    height: 50%;
+  }
+  .spot-enhance {
+    grid-gap: 3px;
+    margin-bottom: 30px;
+  }
+  .spot-enhance div {
+    font-size: 0.7em;
+  }
+  .spot-enhance h6 {
+    font-size: 1em;
+  }
+  .listing-button, .listing-del-button, .listing-book-button {
+    padding: 6px 13px;
+    font-size:0.8em;
+  }
 
 }
