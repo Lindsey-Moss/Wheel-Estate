@@ -112,7 +112,8 @@ export default class ListingForm extends Component {
             <select
               value={newSpot.pets} 
               onChange={this.props.handleChange} 
-              name={'pets'}>
+              name={'pets'}
+              className="short">
                 <option value="true">Yes</option>
                 <option value="false">No</option>
             </select>

@@ -567,6 +567,7 @@ textarea {
   }
   .listings {
     justify-content: center;
+    width: 100%;
   }
   .page-short{
     width: 93%;
@@ -630,5 +631,24 @@ textarea {
   .short, .long, .shortlabel, .longlabel, .extralonglabel, .new-listing-form input, .new-listing-form label {
     width: 100%;
   }
+  .spot-card {
+    width: 80%;
+    max-width: 90%;
+    height: 30vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .spot-card img {
+    height: auto;
+    max-height: 60%;
+  }
+  .spot-card h4 {
+    width: 95%;
+  }
+ .spot-card h6 {
+   align-self:stretch;
+ }
 
 }
