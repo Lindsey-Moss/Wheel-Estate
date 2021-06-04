@@ -548,9 +548,10 @@ textarea {
   }
   .topper img {
     width: 30px;
+    margin: 7px 5px 4px 10px;
   }
   .topper {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .navbar a{
     padding: 8px 10px;
@@ -624,7 +625,7 @@ textarea {
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-start;
-    width: 90%;
+    width: 85%;
   }
   .short, .long, .shortlabel, .longlabel, .extralonglabel, .new-listing-form input, .new-listing-form label {
     width: 100%;
