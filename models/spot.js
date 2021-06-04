@@ -14,7 +14,7 @@ const SpotSchema = new Schema(
     utilities: {type: String, enum: ['Electric', 'Water', 'Internet', 'electric', 'water', 'internet', 'None', 'none'], required: true},
     description: { type: String, required: true },
     privacy: {type: String, required: true},
-    pets: {type: String, required: true},
+    pets: {type: Boolean, required: true},
     location: {type: Number, required: true}
   },
   { timestamps: true }

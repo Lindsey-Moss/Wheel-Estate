@@ -87,20 +87,18 @@ export default class App extends Component {
       </div>) : (
         <div className="greet">
           <div className="pretopper">
-            <h1>Welcome to <span style={{color:'#ffde35'}}>Wheel Estate!</span></h1>
+            <h1>Welcome to <span style={{color:'#ffde35'}}>Wheel Estate</span>!</h1>
             <h2>Are you a:</h2>
           </div>
         <div className="choice">
-          <button className="left" id="owner" onClick={this.setUser}>
+          <div className="left" id="owner" onClick={this.setUser}>
             <img src={homeowner} alt="house on property" id="owner" />
             <h2 id="owner">Property owner with available space to rent out?</h2>
-
-          </button>
-          <button className="right" id="parker" onClick={this.setUser}>
+          </div>
+          <div className="right" id="parker" onClick={this.setUser}>
             <img src={thow} alt="tiny house on wheels" id="parker" />
             <h2 id="parker">Tiny-homeowner seeking a parking arrangement?</h2>
-
-          </button>
+          </div>
         </div>
         </div>
       )}

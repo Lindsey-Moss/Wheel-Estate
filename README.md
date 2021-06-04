@@ -28,7 +28,7 @@ This application aims to provide a way to connect tiny-homeowners with property 
 ### ***Getting Started***
 ##### To get started, simply load the URL, and browse listings. If you want to add a listing or make a booking, you will need to Log In to an existing account or Register a new account in the upper right-hand corner.
 ##### A Trello board was used to track the progress of this application and can be viewed [here](https://trello.com/b/bg4MXsCq/wheel-estate-a-tiny-house-parking-app).
-##### The project has been deployed on Heroku and can be viewed [here](#).
+##### The project has been deployed on Heroku and can be viewed [here](https://damp-fortress-68265.herokuapp.com/).
 ***
 
 ### ***Screenshots***
