@@ -568,17 +568,21 @@ textarea {
     justify-content: center;
   }
   .page-short{
-    width: 92%;
-    height: 80vh;
+    width: 93%;
+    height: 85vh;
   }
   .details-left{
-    height: 55vh;
+    width: 37%;
+    margin-right: 1.5%;
+    height: 70vh;
   }
   .details-right{
-    height: 55vh;
+    width: 55%;
+    height: 70vh;
   }
   .description {
-    width: 94%;
+    width: 97%;
+    margin-left: 1.5%;
     height: 45%;
   }
   .spot-enhance {
