@@ -6,7 +6,8 @@ export default class Home extends Component {
     return (
         <div className="page">
           <div className="home">
-          <h1>Wheel Estate</h1>
+          <h1 style={{fontFamily:'Century Gothic Bold'}}>Wheel Estate</h1>
+            <h5>Click <span style={{fontFamily:'Flamenco', fontSize:'1.2em'}}>Listings</span> above to browse currently available parking spots.</h5>
             <p>
             What has long been the biggest drawback of tiny living is 
             now an easy one-stop-shop: By connecting community-minded 

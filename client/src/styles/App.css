@@ -67,6 +67,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .topper img {
   margin: 14px 10px 8px 20px;
+  width: 70px;
 }
 
 .navbar {
@@ -223,7 +224,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .home hr {
-  width: 500px;
+  width: 60%;
   margin: 10px 0px;
 }
 
@@ -536,4 +537,31 @@ textarea {
   color: lightgray;
   font-weight: bold;
   border-radius: 3px;
+}
+
+
+/* MOBILE VIEWING OPTIMIZATION */
+
+@media screen and (max-width: 1020px) {
+  p,h1,h2,h3,h4,h5,h6 {
+    font-size: 1em;
+  }
+  .topper img {
+    width: 30px;
+  }
+  
+  .topper {
+    font-size: 1em;
+  }
+  
+  .navbar a{
+    padding: 8px 10px;
+  }
+ .page {
+   height: 91vh;
+ }
+ .choice h2 {
+  font-size: 1em;
+}
+
 }

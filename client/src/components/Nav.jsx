@@ -7,7 +7,7 @@ export default class Nav extends Component {
     const user = this.props.user
     return (
       <nav className="topper">
-        <NavLink to="/"><img src={logo} alt="logo" width="70" /></NavLink>
+        <NavLink to="/"><img src={logo} alt="logo" /></NavLink>
         <div className="navbar">
           <div>
             <NavLink to="/listings/all">Listings</NavLink>
